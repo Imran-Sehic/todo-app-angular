@@ -142,6 +142,7 @@ input:focus{
 
 @media (max-width: 900px){
   .authentication{
+    width: 80%;
     flex-direction: column;
     height: auto;
   }
