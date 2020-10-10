@@ -1,0 +1,35 @@
+<i class="fa fa-bars" (click)="showSidebar()"></i>
+<div class="home">
+
+    <div id="sidebar-mobile">
+        <div class="app-sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="info info-mobile">
+            <app-info></app-info>
+        </div>
+    </div>
+
+    <div class="header">
+        <app-header></app-header>
+    </div>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="app-sidebar">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="notes notes-desktop">
+                <app-notes></app-notes>
+            </div>
+        </div>
+        <div class="todo-tile">
+            <app-todo-tile></app-todo-tile>
+            <div class="notes notes-mobile">
+                <app-notes></app-notes>
+            </div>
+        </div>
+        <div class="info info-desktop">
+            <app-info></app-info>
+        </div>
+    </div>
+</div>

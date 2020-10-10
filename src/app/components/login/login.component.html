@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="authentication">
+        <div class="logoContainer">
+            <div>
+                <i class="fa fa-check-square"></i><br>
+                <span class="title">Todoer</span><br><br>
+                <span>All of your To-dos in one place!</span>
+            </div>
+        </div>
+        <div id="authContainer">
+            <div class="loginContainer">
+                <h2>Login</h2>
+                <form [formGroup]="loginUserForm">
+                    <i class="fa fa-user"></i>&nbsp;&nbsp;<input [formControlName]="'usernameLogin'" placeholder="username"
+                        type="text"><br><br>
+                    <i class="fa fa-lock"></i>&nbsp;&nbsp;<input [formControlName]="'passwordLogin'" placeholder="password"
+                        type="text"><br><br>
+                    <button (click)="login()" class="loginBtn">Login</button><br>
+                    <p class="registerMsg">Not registered! <span (click)="goToRegister()">register</span></p>
+                </form>
+            </div>
+            <div class="registerContainer">
+                <form [formGroup]="registerUserForm">
+                    <h2>Register</h2>
+                    <input [formControlName]="'firstnameRegister'" placeholder="firstname" type="text"><br><br>
+                    <input [formControlName]="'lastnameRegister'" placeholder="lastname" type="text"><br><br>
+                    <input [formControlName]="'usernameRegister'" placeholder="username" type="text"><br><br>
+                    <input [formControlName]="'passwordRegister'" placeholder="password" type="text"><br><br>
+                    <button (click)="register()" class="registerBtn">Register</button><br>
+                    <p class="loginMsg">Already registered! <span (click)="goToLogin()">login</span></p>
+                </form>
+            </div>
+        </div>
+        <div class="error" *ngIf="loggedIn === 'no'">
+            Enter username and password!
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+.navbar {
+  background: linear-gradient(to right, rgb(66, 199, 66), rgb(72, 214, 72), rgb(66, 199, 66));
+  border-top: 4px solid white;
+  border-left: 4px solid white;
+  border-right: 4px solid silver;
+  border-bottom: 4px solid silver;
+  box-shadow: 3px 3px 5px #838383;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.fa-check-square {
+  font-size: 40px;
+  transform: rotate(-20deg);
+  color: white;
+  text-shadow: 0 0 3px #000;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo span{
+  font-family: 'Sansita Swashed', cursive;
+  margin-left: 5px;
+  font-size: 25px;
+  text-shadow:
+  -1px -1px 0 white,
+  1px -1px 0 white,
+  -1px 1px 0 white,
+  1px 1px 0 white;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#dropdown{
+  position: absolute;
+  width: 150px;
+  right: 20px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid rgb(72, 214, 72);
+  top: 70px;
+  box-shadow: 3px 3px 5px #838383;
+}
+
+#dropdown > div{
+  cursor: pointer;
+  display: flex;
+  padding: 5px 0;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  border: 1px solid rgb(72, 214, 72);
+  transition: 0.3s all ease;
+}
+
+#dropdown > div:hover{
+  color: rgb(72, 214, 72);
+}
+
+#dropdown div .first{
+  text-align: center;
+  width: 30%;
+}
+
+#dropdown div .second{
+  width: 70%;
+}
+
+button{
+  cursor: pointer;
+  position: relative;
+  background: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 3px;
+  transition: 0.3s all ease;
+}
+
+button:focus{
+  outline: none;
+}
+
+button:hover{
+  background: white;
+  color: rgb(72, 214, 72);
+}
+
+.fa-angle-double-down{
+  font-size: 20px;
+  margin: 0 5px;
+}

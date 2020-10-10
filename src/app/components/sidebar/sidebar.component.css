@@ -1,0 +1,23 @@
+.sidebar{
+    font-weight: 600;
+}
+
+.sidebar div{
+    border-radius: 5px;
+    border: 2px solid rgb(255, 255, 255, 0.5);
+    background-color: rgb(72, 214, 72);
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 4px 4px 5px #838383;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.sidebar div:hover{
+    background: rgb(72, 214, 72, 0.5);
+}
+
+i{
+    margin-right: 10px;
+}
