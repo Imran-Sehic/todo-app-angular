@@ -18,8 +18,6 @@ export class SidebarComponent implements OnInit {
 
   goToRemovedTodos(){}
 
-  goToNotes(){}
-
   goToStatistics(){}
 
 }

@@ -31,9 +31,9 @@
   display: flex;
 }
 
-.sidebar {
+.sidebar-desktop {
   width: 20%;
-  height: 100%;
+  height: min-content;
   padding: 5px;
 }
 
@@ -41,39 +41,10 @@
   display: none;
 }
 
-.notes{
-  color: rgb(158, 158, 158);
-  background: rgba(255, 255, 255, 0.75);
-  height: 50%;
-  border-radius: 15px;
-  margin-bottom: 5px;
-  overflow-y: scroll;
-  box-shadow: 4px 4px 5px #838383;
-}
-
-.notes-mobile{
-  margin-top: 10px;
-  display: none;
-}
-
 .todo-tile {
-  width: 60%;
+  width: 70%;
   height: 100%;
   padding: 5px;
-}
-
-.info{
-  width: 20%;
-  margin: 5px;
-  height: min-content;
-  background: rgb(255, 255, 255, 0.5);
-  color: rgb(158, 158, 158);
-  border-radius: 15px;
-  box-shadow: 4px 4px 5px #838383;
-}
-
-.info-mobile{
-  display: none;
 }
 
 @media (max-width: 900px){
@@ -97,34 +68,13 @@
     left: 0;
   }
 
-  .sidebar{
+  .sidebar-desktop{
     display: none;
-  }
-
-  .notes-desktop{
-    display: none;
-  }
-
-  .notes-mobile{
-    display: block;
   }
 
   .fa-bars{
     display: block;
     position: fixed;
-  }
-
-  .info-desktop{
-    display: none;
-  }
-
-  .info-mobile{
-    display: block;
-    width: 50%;
-  }
-
-  .app-sidebar{
-    width: 50%;
   }
 
   .todo-tile{

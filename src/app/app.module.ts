@@ -10,8 +10,6 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TodoTileComponent } from './components/todo-tile/todo-tile.component';
-import { NotesComponent } from './components/notes/notes.component';
-import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +18,7 @@ import { InfoComponent } from './components/info/info.component';
     HomeComponent,
     HeaderComponent,
     SidebarComponent,
-    TodoTileComponent,
-    NotesComponent,
-    InfoComponent
+    TodoTileComponent
   ],
   imports: [
     BrowserModule,
