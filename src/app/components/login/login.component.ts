@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { throwError } from 'rxjs';
-import { LoginUserPayload } from './login-user.payload';
+import { LoginRequest } from './login-request.payload';
+import { RegisterUserPayload } from './register-user.payload';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
@@ -12,13 +13,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  loginUserPayload: LoginUserPayload;
+  loginRequestPayload: LoginRequest;
+  registerUserPayload: RegisterUserPayload;
   loginUserForm: FormGroup;
   registerUserForm: FormGroup;
   loggedIn: string;
+  registered: string;
 
-  constructor(private authService: AuthService, private router: Router) { 
-    this.loginUserPayload = {
+  constructor(private authService: AuthService, private router: Router) {
+    this.loginRequestPayload = {
+      username: '',
+      password: ''
+    }
+
+    this.registerUserPayload = {
+      firstname: '',
+      lastname: '',
       username: '',
       password: ''
     }
@@ -38,34 +48,58 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login(){
-    this.loginUserPayload.username = this.loginUserForm.get('usernameLogin').value;
-    this.loginUserPayload.password = this.loginUserForm.get('passwordRegister').value;
+  login() {
+    this.loginRequestPayload.username = this.loginUserForm.get('usernameLogin').value;
+    this.loginRequestPayload.password = this.loginUserForm.get('passwordLogin').value;
 
     if (this.loginUserForm.get('usernameLogin').valid && this.loginUserForm.get('passwordLogin').valid) {
 
-      this.authService.login(this.loginUserPayload).subscribe(() => {
-        this.loggedIn = "yes";
-        this.router.navigateByUrl('');
+      this.authService.login(this.loginRequestPayload).subscribe(data => {
+        if (data) {
+          this.loggedIn = "yes";
+          this.router.navigateByUrl('');
+        } else {
+          this.loggedIn = "denied"
+        }
       }, error => {
         throwError(error);
       });
 
-    }else{
+    } else {
       this.loggedIn = "no";
     }
   }
 
-  register(){
+  register() {
+    this.registerUserPayload.firstname = this.registerUserForm.get('firstnameRegister').value;
+    this.registerUserPayload.lastname = this.registerUserForm.get('lastnameRegister').value;
+    this.registerUserPayload.username = this.registerUserForm.get('usernameRegister').value;
+    this.registerUserPayload.password = this.registerUserForm.get('passwordRegister').value;
 
+    if (this.registerUserForm.get('usernameRegister').valid && this.registerUserForm.get('passwordRegister').valid
+      && this.registerUserForm.get('firstnameRegister').valid && this.registerUserForm.get('lastnameRegister').valid) {
+
+      this.authService.register(this.registerUserPayload).subscribe(registered => {
+        if (registered) {
+          this.registered = "yes";
+        } else {
+          this.registered = "usernameTaken";
+        }
+      }, error => {
+        throwError(error);
+      });
+
+    } else {
+      this.registered = "no";
+    }
   }
 
-  goToRegister(){
-    document.getElementById('authContainer').style.transform = "rotateY(180deg)";
+  goToRegister() {
+    document.getElementById('authContainer').classList.toggle('rotate');
   }
 
-  goToLogin(){
-    document.getElementById('authContainer').style.removeProperty('transform');
+  goToLogin() {
+    document.getElementById('authContainer').classList.toggle('rotate');
   }
 
 }

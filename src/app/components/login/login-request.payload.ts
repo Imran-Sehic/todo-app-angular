@@ -1,4 +1,4 @@
-export class LoginUserPayload{
+export class LoginRequest {
     username: string;
     password: string;
 }

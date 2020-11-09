@@ -56,22 +56,39 @@
 .content {
   width: 80%;
   height: 50%;
+  padding: 15px;
   text-align: center;
   background: whitesmoke;
   box-shadow: 3px 3px 5px #838383;
 }
 
-.todo {
-  text-align: left;
-  font-weight: 600;
-  padding: 1px 10px;
+button {
+  font-family: 'Raleway', sans-serif;
+  background: rgb(49, 115, 202);
+  border: 2px solid transparent;
+  outline: none;
+  padding: 3px 8px;
+  color: white;
+  cursor: pointer;
 }
 
-.todo:hover {
-  background: rgb(72, 214, 72);
+button:hover {
+  background: none;
+  color: rgb(49, 115, 202);
+  border: 2px solid rgb(49, 115, 202);
 }
 
-@media (max-width: 900px){
+.deleteBtn {
+  background: rgb(219, 42, 42);
+}
+
+.deleteBtn:hover {
+  background: none;
+  color: rgb(219, 42, 42);
+  border: 2px solid rgb(219, 42, 42);
+}
+
+@media (max-width: 900px) {
   .container {
     font-size: 13px;
   }

@@ -21,10 +21,16 @@ export class SidebarComponent implements OnInit {
     this.router.navigateByUrl('active-todos');
   }
 
-  goToCompletedTodos(){}
+  goToCompletedTodos(){
+    this.router.navigateByUrl('completed-todos');
+  }
 
-  goToRemovedTodos(){}
+  goToRemovedTodos(){
+    this.router.navigateByUrl('removed-todos');
+  }
 
-  goToStatistics(){}
+  goToStatistics(){
+    this.router.navigateByUrl('statistics');
+  }
 
 }

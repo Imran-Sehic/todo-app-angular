@@ -62,16 +62,38 @@
 }
 
 .todo {
-  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 600;
-  padding: 1px 10px;
+  padding: 10px 10px;
 }
 
 .todo:hover {
-  background: rgb(72, 214, 72);
+  background: rgb(214, 67, 62);
 }
 
-@media (max-width: 900px){
+.todo div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.todo div i {
+  margin-right: 10px;
+}
+
+.todo i {
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.todo i:hover {
+  color: #838383;
+}
+
+@media (max-width: 900px) {
   .container {
     font-size: 13px;
   }

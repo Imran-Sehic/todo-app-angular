@@ -5,15 +5,11 @@
         </div>
         <button (click)="showDropdown()"><i class="fa fa-angle-double-down"></i></button>
         <div id="dropdown" style="display: none;">
-            <div>
+            <div style="display: flex; justify-content: center; align-items: center;" (click)="goToUserProfile()">
                 <div class="first"><i class="fa fa-user"></i></div>
-                <div class="second">Profile</div>
+                <div class="second">Profile <br><span style="color: gray;" *ngIf="dataLoaded">{{user.firstname}} {{user.lastname}}</span></div>
             </div>
-            <div>
-                <div class="first"><i class="fa fa-gear"></i></div>
-                <div class="second">Settings</div>
-            </div>
-            <div>
+            <div (click)="logout()">
                 <div class="first"><i class="fa fa-sign-out"></i></div>
                 <div class="second">Logout</div>
             </div>

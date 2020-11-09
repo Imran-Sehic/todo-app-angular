@@ -1,16 +1,14 @@
 .navbar {
   background: linear-gradient(to right, rgb(66, 199, 66), rgb(72, 214, 72), rgb(66, 199, 66));
-  border-top: 4px solid white;
-  border-left: 4px solid white;
-  border-right: 4px solid silver;
-  border-bottom: 4px solid silver;
-  box-shadow: 3px 3px 5px #838383;
-  padding: 10px 15px;
-  border-radius: 10px;
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  border-right: 3px solid silver;
+  border-bottom: 3px solid silver;
+  padding: 5px 15px;
 }
 
 .fa-check-square {
-  font-size: 40px;
+  font-size: 30px;
   transform: rotate(-20deg);
   color: white;
   text-shadow: 0 0 3px #000;
@@ -25,7 +23,7 @@
 .logo span{
   font-family: 'Sansita Swashed', cursive;
   margin-left: 5px;
-  font-size: 25px;
+  font-size: 20px;
   text-shadow:
   -1px -1px 0 white,
   1px -1px 0 white,
@@ -46,7 +44,7 @@ nav{
   background: white;
   border-radius: 5px;
   border: 2px solid rgb(72, 214, 72);
-  top: 70px;
+  top: 50px;
   box-shadow: 3px 3px 5px #838383;
 }
 

@@ -1,0 +1,37 @@
+<i class="fa fa-bars" (click)="showSidebar()"></i>
+
+<div id="sidebar">
+    <app-sidebar></app-sidebar>
+</div>
+
+<div class="container">
+
+    <div class="header">
+        <app-header></app-header>
+        <div>Profile</div>
+    </div>
+
+    <div class="content">
+
+        <div class="profile">
+            <form [formGroup]="updateProfileForm">
+                Firstname<br>
+                <input [formControlName]="'firstname'" type="text"><br><br>
+                Lastname<br>
+                <input [formControlName]="'lastname'"  type="text"><br><br>
+                Old Password<br>
+                <input [formControlName]="'oldPassword'" type="password"><br><br>
+                New Password<br>
+                <input [formControlName]="'newPassword'" type="password"><br><br>
+                <button (click)="updateProfile()" class="updateBtn">Update</button>&nbsp;&nbsp;
+                <button (click)="deleteProfile()" class="deleteBtn">Delete Profile</button>
+                <br><br>
+            </form>
+            <div *ngIf="updating === 'updating'">Updating...</div>
+            <div *ngIf="updating === 'no'">Fill all the fields in order to update!</div>
+            <div *ngIf="updating === 'wrongPassword'">Your old password is not correct!</div>
+        </div>
+
+    </div>
+</div>
+

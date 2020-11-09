@@ -61,17 +61,7 @@
   box-shadow: 3px 3px 5px #838383;
 }
 
-.todo {
-  text-align: left;
-  font-weight: 600;
-  padding: 1px 10px;
-}
-
-.todo:hover {
-  background: rgb(72, 214, 72);
-}
-
-@media (max-width: 900px){
+@media (max-width: 900px) {
   .container {
     font-size: 13px;
   }

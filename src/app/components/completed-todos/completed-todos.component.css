@@ -63,6 +63,7 @@
 
 .todo {
   text-align: left;
+  text-decoration: line-through;
   font-weight: 600;
   padding: 1px 10px;
 }
@@ -71,7 +72,7 @@
   background: rgb(72, 214, 72);
 }
 
-@media (max-width: 900px){
+@media (max-width: 900px) {
   .container {
     font-size: 13px;
   }

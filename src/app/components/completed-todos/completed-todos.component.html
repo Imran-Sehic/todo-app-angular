@@ -8,13 +8,13 @@
 
     <div class="header">
         <app-header></app-header>
-        <div>Active to-dos</div>
+        <div>Completed to-dos</div>
     </div>
 
     <div class="content">
         <div class="loading" *ngIf="areThereTodos === 'loading'">Loading...</div>
         <div class="notodos" *ngIf="areThereTodos === 'no'">
-            <p>No active to-dos!</p>
+            <p>No completed to-dos!</p>
         </div>
         <div class="todo-tile" *ngIf="areThereTodos === 'yes'">
             <div class="todo" *ngFor="let todo of todos">

@@ -1,100 +1,119 @@
-.home{
-  position: absolute;
-  font-family: 'Raleway', sans-serif;
-  width: 100%;
+.container {
   height: 100%;
+  padding: 110px 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.fa-bars{
-  position: absolute;
-  border: 2px solid white;
+.fa-bars {
+  position: fixed;
   top: 20%;
-  display: none;
-  cursor: pointer;
+  left: 0;
   padding: 10px;
   color: white;
   background: rgb(72, 214, 72);
+  border: 2px solid white;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 3px 3px 5px #838383;
+}
+
+#sidebar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: whitesmoke;
+  transition: 0.5s all ease;
   z-index: 10;
 }
 
-::-webkit-scrollbar {
-  width: 0;
+#sidebar.active {
+  left: 0;
 }
 
-.header{
-    padding: 5px;
-}
-
-.wrapper {
+.header {
   width: 100%;
-  height: 85%;
+  position: fixed;
+  top: 0;
+  box-shadow: 3px 3px 5px #838383;
+  z-index: 5;
+}
+
+.add-todo {
   display: flex;
-}
-
-.sidebar-desktop {
-  width: 20%;
-  height: min-content;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
   padding: 5px;
 }
 
-#sidebar-mobile{
-  display: none;
+.add-todo input {
+  font-size: 20px;
+  width: 60%;
 }
 
-.todo-tile {
-  width: 70%;
-  height: 100%;
-  padding: 5px;
-  margin: 5px;
-  border-radius: 15px;
-  box-shadow: 4px 4px 5px #838383;
-  background: rgb(255, 255, 255, 0.5);
+.add-todo div {
+  background: rgb(72, 214, 72);
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
 }
+
+.content {
+  width: 80%;
+  height: 50%;
+  text-align: center;
+  background: whitesmoke;
+  box-shadow: 3px 3px 5px #838383;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  padding: 10px 10px;
+}
+
+.todo:hover {
+  background: rgb(72, 214, 72);
+}
+
+.todo div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.todo div input {
+  zoom: 1.3;
+  transform: rotateZ(-20deg);
+  margin-right: 10px;
+}
+
+.todo i {
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.todo i:hover {
+  color: #838383;
+}
+
+input[type=checkbox]:checked + label {
+  text-decoration: line-through;
+} 
 
 @media (max-width: 900px){
-  #sidebar-mobile{
-    font-size: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: -100%;
-    padding: 0;
-    background: rgb(72, 214, 72);
-    z-index: 5;
-    transition: 0.5s all ease;
-  }
-
-  #sidebar-mobile.active{
-    left: 0;
-  }
-
-  .sidebar-desktop{
-    display: none;
-  }
-
-  .fa-bars{
-    display: block;
-    position: fixed;
-  }
-
-  .todo-tile{
-    width: 80%;
-    margin: auto;
-  }
-}
-
-@media (min-width: 900px) and (max-width: 950px) {
-  .home{
-    font-size: 10px;
-  }
-}
-
-@media (min-width: 950px) and (max-width: 1300px) {
-  .home{
+  .container {
     font-size: 13px;
   }
 }
