@@ -56,8 +56,8 @@ export class ProfileComponent implements OnInit {
 
       this.updating = "updating";
 
-      this.userService.updateProfile(this.updateProfilePayload).subscribe(data => {
-        if(data){
+      this.userService.updateProfile(this.updateProfilePayload).subscribe(canUpdate => {
+        if(canUpdate){
           this.router.navigateByUrl('login');
         }else{
           this.updating = "wrongPassword";

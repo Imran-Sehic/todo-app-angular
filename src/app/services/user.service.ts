@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { UpdateProfile } from '../components/profile/update-profile.payload';
 import { User } from '../models/user-model';
 import { AuthService } from './auth.service';
@@ -10,11 +11,6 @@ import { AuthService } from './auth.service';
 })
 export class UserService {
 
-  refreshTokenPayload = {
-    refreshToken: this.authService.getRefreshToken(),
-    username: this.authService.getUserName()
-  }
-
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   getCurrentUser() :Observable<User> {
@@ -22,7 +18,15 @@ export class UserService {
   }
 
   updateProfile(updateProfilePayload: UpdateProfile) :Observable<boolean> {
-    return this.http.put<boolean>('http://localhost:8080/api/user/', [updateProfilePayload, this.refreshTokenPayload]);
+    return this.http.put<boolean>('http://localhost:8080/api/user/', updateProfilePayload).pipe(
+      map(canUpdate => {
+        if(canUpdate){
+          this.authService.logout();
+          return true;
+        }
+        return false;
+      })
+    );
   }
 
   deleteProfile() {
